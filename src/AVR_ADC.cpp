@@ -1,4 +1,4 @@
-#include "ADC.h"
+#include "AVR_ADC.h"
 
 
 Adc adc; //preinitiate adc
@@ -62,7 +62,7 @@ uint16_t Adc::read(byte channel)
 	ADCSRA|= 1<<ADIF; //ADIF must be cleared(1) to trigger a new conversion next time
 	return ADCW; //return ADC value
 }
-float Adc:readAverage(byte channel, byte N)
+float Adc::readAverage(byte channel, byte N)
 {
 	uint32_t adcSum = 0; 
 	for(byte i = 0; i< N; i++)

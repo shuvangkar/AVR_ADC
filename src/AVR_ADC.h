@@ -23,7 +23,7 @@ class Adc
     void (*isrCallback)();            //Function pointer for interrupt routine
 
     uint16_t read(byte channel);
-    float readAverage(byte channel, byte N)
+    float readAverage(byte channel, byte N);
     float getAvcc();
 	
 };
